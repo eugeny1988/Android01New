@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">НМедиа</string>
     <string name="nmedia">НМедиа</string>
+    <string name="visitors" >500k</string>
+    <string name="likes">10</string>
+    <string name="message">Какой-то текст</string>
+    <string name="netologyName">Нетология</string>
 </resources>
