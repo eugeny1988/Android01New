@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+
 }
 
 android {
@@ -12,6 +14,9 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        buildFeatures {
+            viewBinding true
+        }
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
