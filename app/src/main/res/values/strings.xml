@@ -2,7 +2,7 @@
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia!</string>
     <string name="visitors">500K</string>
-    <string name="likes">10</string>
     <string name="message">Какой-то текст</string>
     <string name="netologyName">Нетология</string>
+    <string name="likes" translatable="false">10</string>
 </resources>

@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintLeft_toRightOf="@id/imageView"
+        app:layout_constraintLeft_toRightOf="@id/textViewLikes"
         app:layout_constraintTop_toTopOf="@id/textViewMessage"
         app:srcCompat="@drawable/ic_baseline_share_24" />
 
