@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="visitors" >500k</string>
     <string name="message">Какой-то текст</string>
     <string name="netologyName">Нетология</string>
     <string name="shares">0</string>

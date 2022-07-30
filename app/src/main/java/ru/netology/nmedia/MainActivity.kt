@@ -22,15 +22,15 @@ class MainActivity : AppCompatActivity() {
         var shares = post.postShares.toInt()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        imageView.setOnClickListener {
+        imageViewLikes.setOnClickListener {
             let {
                 if (!post.isLiked) {
-                    binding.imageView.setImageResource(R.drawable.ic_baseline_thumb_up_alt_24)
+                    binding.imageViewLikes.setImageResource(R.drawable.ic_baseline_thumb_up_alt_24)
                     post.isLiked = true
                     likes++
                     binding.textViewLikes.setText(viewClicks(likes))
                 } else {
-                    binding.imageView.setImageResource(R.drawable.ic_baseline_thumb_up_off_alt_24)
+                    binding.imageViewLikes.setImageResource(R.drawable.ic_baseline_thumb_up_off_alt_24)
                     likes--
                     post.isLiked = false
                     binding.textViewLikes.setText(viewClicks(likes))
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-        imageView2.setOnClickListener{
-            binding.textShares.setText(viewClicks(shares++))
+        imageViewShare.setOnClickListener{
+            binding.textViewShares.setText(viewClicks(shares++))
         }
 
     }

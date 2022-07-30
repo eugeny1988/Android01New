@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" tools:ignore="MissingTranslation">NMedia</string>
     <string name="nmedia" tools:ignore="MissingTranslation">NMedia!</string>
-    <string name="visitors" tools:ignore="MissingTranslation">0</string>
-    <string name="message" tools:ignore="MissingTranslation">Какой-то текст</string>
-    <string name="netologyName" tools:ignore="MissingTranslation">Нетология</string>
+    <string name="message" tools:ignore="MissingTranslation">Any text</string>
+    <string name="netologyName" tools:ignore="MissingTranslation">Netology</string>
     <string name="likes" translatable="false">"0"</string>
-    <string name="shares">0</string>
+    <string name="shares" translatable="false">0</string>
+    <string name="date" tools:ignore="MissingTranslation">2022–07-03 16:14</string>
+    <string name="visitors" translatable="false">0</string>
 </resources>

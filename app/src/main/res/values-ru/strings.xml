@@ -2,8 +2,7 @@
 <resources>
     <string name="app_name">НМедиа</string>
     <string name="nmedia">НМедиа</string>
-    <string name="visitors" >500k</string>
     <string name="message">Какой-то текст</string>
     <string name="netologyName">Нетология</string>
-    <string name="shares">0</string>
+    <string name="date">30.07.2022 16:14</string>
 </resources>
