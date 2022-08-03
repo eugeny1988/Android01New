@@ -11,10 +11,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
-val post = viewModel.data.value
+        val post = viewModel.data.value
         setContentView(binding.root)
-        viewModel.data.observe(this) { post ->
-            }
+        viewModel.data.observe(this) {
+            binding.name.setText(it.author)
+            binding.date.setText(it.published)
+            binding.textViewLikes.setText(it.postLikes)
+            binding.textViewShares.setText(it.postShares)
+            binding.textViewMessage.setText(it.content)
+        }
 
         imageViewLikes.setOnClickListener {
             let {

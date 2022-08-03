@@ -3,10 +3,10 @@ package ru.netology.nmedia
 import kotlin.math.round
 
 data class Post(
-    val id: Long,
-    val author: String,
-    val content: String,
-    val published: String,
+    var id: Long,
+    var author: String,
+    var content: String,
+    var published: String,
     var postLikes: Int,
     var postShares: Int,
     var isLiked: Boolean = false,
