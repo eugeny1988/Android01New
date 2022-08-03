@@ -7,8 +7,8 @@ data class Post(
     val author: String,
     val content: String,
     val published: String,
-    var postLikes: String,
-    var postShares: String,
+    var postLikes: Int,
+    var postShares: Int,
     var isLiked: Boolean = false,
 ) {
     fun viewClicks(count: Int): String {

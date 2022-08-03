@@ -5,6 +5,6 @@
     <string name="netologyName" tools:ignore="MissingTranslation">Netology</string>
     <string name="likes" translatable="false">"0"</string>
     <string name="shares" translatable="false">0</string>
-    <string name="date" tools:ignore="MissingTranslation">2022–07-03 16:14</string>
+    <string name="date" tools:ignore="MissingTranslation"><![CDATA[2022–07-03 16:14]]></string>
     <string name="visitors" translatable="false">0</string>
 </resources>
