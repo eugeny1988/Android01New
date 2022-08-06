@@ -6,4 +6,5 @@ class PostViewModel : ViewModel() {
     private val repository: PostInterface = PostImplementation()
     val data by repository::data
     fun onLikeClicked() = repository.like()
+    fun onShareClicked() = repository.share()
 }

@@ -9,11 +9,30 @@ import ru.netology.nmedia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<PostViewModel>()
+    private val binding = ActivityMainBinding.inflate(layoutInflater)
+    private var post = Post(
+        1,
+        getString(R.string.netologyName),
+        getString(R.string.message),
+        getString(R.string.date),
+        getString(R.string.likes),
+        getString(R.string.shares)
+
+    )
+    private var shares = post.postShares.toInt()
+    private var likes = post.postLikes.toInt()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        val post = viewModel.data.value
+
         setContentView(binding.root)
+
+        imageViewLikes.setOnClickListener {
+            viewModel.onLikeClicked()
+
+        }
+        imageViewShare.setOnClickListener {
+            viewModel.onShareClicked()
+        }
         viewModel.data.observe(this) {
             binding.name.setText(it.author)
             binding.date.setText(it.published)
@@ -22,24 +41,8 @@ class MainActivity : AppCompatActivity() {
             binding.textViewMessage.setText(it.content)
         }
 
-        imageViewLikes.setOnClickListener {
-            let {
-                viewModel.onLikeClicked()
-            }
-            imageViewShare.setOnClickListener {
-
-                binding.textViewShares.setText(post?.viewClicks(post.postShares++))
-                println("share")
-            }
-        }
-        binding.root.setOnClickListener() {
-            println("Я кликнул по экрану")
-        }
-        binding.netologyLogo.setOnClickListener {
-            println("Клик по аватару")
-        }
-
     }
+
 
 
 }
