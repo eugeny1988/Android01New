@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         imageViewLikes.setOnClickListener {
-            viewModel.onLikeClicked()
+            viewModel.onLikeClicked(post)
 
         }
         imageViewShare.setOnClickListener {
-            viewModel.onShareClicked()
+            viewModel.onShareClicked(post)
         }
         viewModel.data.observe(this) {
             binding.name.setText(it.author)
