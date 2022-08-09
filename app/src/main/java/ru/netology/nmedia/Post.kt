@@ -7,9 +7,9 @@ data class Post(
     var author: String,
     var content: String,
     var published: String,
-    var postLikes: String,
-    var postShares: String,
-    var isLiked: Boolean = false,
+    var postLikes: Int,
+    var postShares: Int,
+    var isLiked: Boolean = false
 ) {
     fun viewNumbers(count: Int): String {
         return when (count) {
