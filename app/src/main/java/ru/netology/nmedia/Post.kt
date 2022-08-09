@@ -11,7 +11,7 @@ data class Post(
     var postShares: String,
     var isLiked: Boolean = false,
 ) {
-    fun viewClicks(count: Int): String {
+    fun viewNumbers(count: Int): String {
         return when (count) {
             in 0..1099 -> "$count"
             in 1100..10_000 -> "${round((count / 100).toDouble()) / 10}K"
