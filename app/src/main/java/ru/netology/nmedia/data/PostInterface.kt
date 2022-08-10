@@ -1,10 +1,10 @@
 package ru.netology.nmedia.data
 
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import ru.netology.nmedia.Post
 
 interface PostInterface {
-    val data: LiveData<Post>
-    fun share(post: Post)
-    fun like(post: Post)
+    val data: MutableLiveData<Post>
+    fun share()
+    fun like()
 }
