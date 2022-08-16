@@ -5,8 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.databinding.ActivityMainBinding
+import ru.netology.nmedia.Post
 
-class PostAdapter : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+class PostAdapter (
+    val posts : List<Post>
+) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
     class ViewHolder(private val binding: ActivityMainBinding) :
         RecyclerView.ViewHolder(binding.root)

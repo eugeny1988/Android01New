@@ -5,31 +5,22 @@ import ru.netology.nmedia.Post
 
 
 class PostImplementation() : PostInterface {
-    override val data: MutableLiveData<Post> = MutableLiveData<Post>(
-        Post(
-            1,
-            "Нетология",
-            "Какой-то текст",
-            "10.08.2022",
-            0,
-            0
-        )
+    override val data = MutableLiveData<List<Post>>(
     )
 
-    override fun like() {
-        var post = data.value
-        var likes = post?.postLikes!!
-        if (!post?.isLiked!!) likes++ else likes--
+    override fun like(post: Post) {
+        var likes = post.postLikes
+        if (!post.isLiked) likes++ else likes--
         post.postLikes = likes
         post.isLiked = !post.isLiked
-        data.value = post!!
+        data.value = listOf(post)
 
     }
 
-    override fun share() {
-        var shares = data.value?.postShares!!
+    override fun share(post: Post) {
+        var shares = post.postShares
         shares++
-        data.value?.postShares = shares
+        post.postShares = shares
     }
 
 }

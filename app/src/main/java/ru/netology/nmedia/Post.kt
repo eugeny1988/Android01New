@@ -3,7 +3,7 @@ package ru.netology.nmedia
 import kotlin.math.round
 
 data class Post(
-    var id: Long,
+    var id: Int,
     var author: String,
     var content: String,
     var published: String,
