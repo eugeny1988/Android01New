@@ -3,121 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/netologyLogo"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="12dp"
-        android:src="@drawable/ic_baseline_more_vert_24"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewLikes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage"
-        app:srcCompat="@drawable/ic_baseline_thumb_up_off_alt_24" />
-
-    <ImageView
-        android:id="@+id/imageViewShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toRightOf="@id/textViewLikes"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage"
-        app:srcCompat="@drawable/ic_baseline_share_24" />
-
-    <TextView
-        android:id="@+id/textViewShares"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/shares"
-        app:layout_constraintLeft_toRightOf="@id/imageViewShare"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage" />
-
-    <ImageView
-        android:id="@+id/imageViewVisitors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintRight_toLeftOf="@id/textViewVisitors"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage"
-        app:srcCompat="@drawable/ic_baseline_visibility_24" />
-
-    <TextView
-        android:id="@+id/textViewVisitors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="14dp"
-        android:text="@string/visitors"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage" />
-
-    <TextView
-        android:id="@+id/textViewLikes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="4dp"
-        android:text="@string/likes"
-        app:layout_constraintLeft_toRightOf="@id/imageViewLikes"
-        app:layout_constraintTop_toTopOf="@id/textViewMessage" />
-
-
-    <TextView
-        android:id="@+id/textViewMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/message"
-        app:layout_constraintStart_toEndOf="@id/netologyLogo"
-        app:layout_constraintTop_toTopOf="@id/date" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/netologyName"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/netologyLogo"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="1dp"
-        android:text="@string/date"
-        android:textSize="10dp"
-        app:layout_constraintLeft_toRightOf="@id/netologyLogo"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+<include
+    layout="@layout/post_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
 </androidx.recyclerview.widget.RecyclerView>

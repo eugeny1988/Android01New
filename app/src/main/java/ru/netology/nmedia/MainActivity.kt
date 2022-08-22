@@ -4,8 +4,13 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.post_layout.*
+import ru.netology.nmedia.data.PostImplementation
+import ru.netology.nmedia.data.PostRepositoryImplementation
 import ru.netology.nmedia.data.PostViewModel
 import ru.netology.nmedia.databinding.ActivityMainBinding
+import ru.netology.nmedia.databinding.PostLayoutBinding
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<PostViewModel>()
@@ -18,31 +23,21 @@ class MainActivity : AppCompatActivity() {
         getString(R.string.likes).toInt(),
         getString(R.string.shares).toInt()
     )
-    val posts = mutableListOf(post)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
-
+        binding.container
+        var postRepository = PostRepositoryImplementation()
         setContentView(binding.root)
-        posts.map {
-            posts.add(
-                Post(
-                    index + 1,
-                    post.author,
-                    "Пост №${index + 1}",
-                    post.published,
-                    post.postLikes,
-                    post.postShares
-                )
-            )
+        postRepository.posts.map { post ->
+            PostLayoutBinding.inflate(layoutInflater)
         }
 
         imageViewLikes.setOnClickListener {
             viewModel.onLikeClicked()
-
-
         }
         imageViewShare.setOnClickListener {
             viewModel.onShareClicked()
