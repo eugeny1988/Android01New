@@ -3,8 +3,7 @@ package ru.netology.nmedia
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.netology.nmedia.*
-import ru.netology.nmedia.data.*
+import ru.netology.nmedia.data.PostRepositoryImplementation
 import ru.netology.nmedia.databinding.PostLayoutBinding
 
 class PostAdapter(
@@ -19,26 +18,28 @@ class PostAdapter(
         RecyclerView.ViewHolder(binding.root) {
         val postRepository = PostRepositoryImplementation()
         fun bind(post: Post) = with(binding) {
-            binding.container.name.setText(post.author)
-            binding.container.date.setText(post.published)
-            binding.container.textViewLikes.setText(
+            this.name.setText(post.author)
+            this.date.setText(post.published)
+            this.textViewLikes.setText(
                 post.viewNumbers(
                     post.postLikes
                 )
             )
-            binding.container.textViewShares.setText(
+            this.textViewShares.setText(
                 post.viewNumbers(
                     post.postShares
                 )
             )
-            binding.container.textViewMessage.setText(post.content)
+            this.textViewMessage.setText(post.content)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflator = LayoutInflater.from(parent.context)
         val binding = PostLayoutBinding.inflate(inflator, parent, false)
-        return ViewHolder(binding)
+        return ViewHolder(binding) {
+            onLikeClicked(it)
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
