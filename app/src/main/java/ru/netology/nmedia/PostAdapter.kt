@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.data.PostRepositoryImplementation
 import ru.netology.nmedia.databinding.PostLayoutBinding
 
-class PostAdapter(
+internal class PostAdapter(
     private val posts: List<Post>,
     private val onLikeClicked: (Post) -> Unit
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
-    class ViewHolder(
+    inner class ViewHolder(
         private val binding: PostLayoutBinding,
         private val onLikeClicked: (Post) -> Unit
     ) :

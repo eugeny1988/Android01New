@@ -9,16 +9,6 @@ import ru.netology.nmedia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<PostViewModel>()
-    private val index = 1
-    private val post = Post(
-        index,
-        getString(R.string.netologyName),
-        "Пост №${index}",
-        getString(R.string.date),
-        getString(R.string.likes).toInt(),
-        getString(R.string.shares).toInt()
-    )
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.data.observe(this) {
             val adapter = PostAdapter(postRepository.posts) {
-                viewModel.onLikeClicked(it)
+                viewModel::onLikeClicked
+                viewModel::onShareClicked
             }
             binding.postRecyclerView.adapter = adapter
         }
