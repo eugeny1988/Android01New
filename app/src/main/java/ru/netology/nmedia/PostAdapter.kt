@@ -7,9 +7,15 @@ import ru.netology.nmedia.data.PostRepositoryImplementation
 import ru.netology.nmedia.databinding.PostLayoutBinding
 
 internal class PostAdapter(
-    private val posts: List<Post>,
+
     private val onLikeClicked: (Post) -> Unit
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+    var postRepositoryImplementation = PostRepositoryImplementation()
+    var posts = postRepositoryImplementation.posts
+    set(value){
+        field = value
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(
         private val binding: PostLayoutBinding,
@@ -39,6 +45,7 @@ internal class PostAdapter(
         val binding = PostLayoutBinding.inflate(inflator, parent, false)
         return ViewHolder(binding) {
             onLikeClicked(it)
+
         }
     }
 

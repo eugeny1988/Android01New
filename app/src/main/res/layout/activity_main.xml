@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/postRecyclerView"
     tools:listitem="@layout/post_layout"
-    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:context=".MainActivity">
 
 <include
@@ -14,4 +14,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     />
+
+
 </androidx.recyclerview.widget.RecyclerView>
